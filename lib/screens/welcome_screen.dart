@@ -15,7 +15,19 @@ class WelcomeScreen extends StatelessWidget {
               ),
               fit: BoxFit.fill),
         ),
-       
+       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          RichText(text: TextSpan(
+            children: [
+              TextSpan(
+                text: "Flamin",
+                style: Theme.of(context).textTheme.displayMedium
+              )
+            ]
+          ))
+        ],
+       ),
       ),
       
     );

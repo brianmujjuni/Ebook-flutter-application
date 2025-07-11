@@ -1,3 +1,4 @@
+import 'package:ebook_online_reading_app/constants.dart';
 import 'package:ebook_online_reading_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Book App',
       theme: ThemeData(
-       scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.white,
+        textTheme: Theme.of(context).textTheme.apply(displayColor: kBlackColor),
         useMaterial3: true,
       ),
       home: WelcomeScreen(),
