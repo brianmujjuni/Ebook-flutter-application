@@ -1,4 +1,5 @@
 import 'package:ebook_reading_app/constants.dart';
+import 'package:ebook_reading_app/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -60,11 +61,28 @@ class HomeScreen extends StatelessWidget {
                               blurRadius: 33,
                               color: kShadowColor)
                         ],
-                        
                       ),
                     ),
                   ),
-                  Image.asset("assets/images/book-1.png",width: 150,)
+                  Image.asset(
+                    "assets/images/book-1.png",
+                    width: 150,
+                  ),
+                  Positioned(
+                    top: 35,
+                    right: 10,
+                    child: Column(
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.favorite_border),
+                        ),
+                        BookRating(
+                          score: 4.9,
+                        )
+                      ],
+                    ),
+                  )
                 ],
               ),
             )
