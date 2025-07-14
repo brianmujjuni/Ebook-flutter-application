@@ -82,11 +82,85 @@ class HomeScreen extends StatelessWidget {
                         )
                       ],
                     ),
+                  ),
+                  Positioned(
+                    top: 160,
+                    child: Container(
+                      height: 85,
+                      width: 202,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 24),
+                            child: RichText(
+                              text: TextSpan(
+                                style: TextStyle(color: kBlackColor),
+                                children: [
+                                  TextSpan(
+                                    text: "Crushing & Influence\n ",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                      text: "Automex Technologies",
+                                      style: TextStyle(color: kBlackColor))
+                                ],
+                              ),
+                            ),
+                          ),
+                          Spacer(),
+                          Row(
+                            children: [
+                              Container(
+                                width: 101,
+                                padding: EdgeInsets.symmetric(vertical: 10),
+                                alignment: Alignment.center,
+                                child: Text("Details"),
+                              ),
+                              Expanded(child: TwoRoundedButton(text: "Read",press: (){},))
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   )
                 ],
               ),
             )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class TwoRoundedButton extends StatelessWidget {
+  final String text;
+  final double radious = 29;
+  final VoidCallback press;
+  const TwoRoundedButton({
+    super.key,
+    required this.text,
+    required this.press,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: press,
+      child: Container(
+        alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(
+          color: kBlackColor,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(29), bottomRight: Radius.circular(29)),
+        ),
+        child: Text(
+          text,
+          style: TextStyle(color: Colors.white),
         ),
       ),
     );
