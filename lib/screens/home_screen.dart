@@ -1,5 +1,6 @@
 import 'package:ebook_reading_app/constants.dart';
 import 'package:ebook_reading_app/widgets/book_rating.dart';
+import 'package:ebook_reading_app/widgets/two_rounded_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -41,6 +42,7 @@ class HomeScreen extends StatelessWidget {
               height: 30,
             ),
             Container(
+              margin: EdgeInsets.only(left: 24,bottom: 40),
               height: 245,
               width: 202,
               // color: Colors.amber,
@@ -94,6 +96,7 @@ class HomeScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(left: 24),
                             child: RichText(
+                              maxLines: 2,
                               text: TextSpan(
                                 style: TextStyle(color: kBlackColor),
                                 children: [
@@ -113,13 +116,21 @@ class HomeScreen extends StatelessWidget {
                           Spacer(),
                           Row(
                             children: [
-                              Container(
-                                width: 101,
-                                padding: EdgeInsets.symmetric(vertical: 10),
-                                alignment: Alignment.center,
-                                child: Text("Details"),
+                              GestureDetector(
+                                onTap: () {},
+                                child: Container(
+                                  width: 101,
+                                  padding: EdgeInsets.symmetric(vertical: 10),
+                                  alignment: Alignment.center,
+                                  child: Text("Details"),
+                                ),
                               ),
-                              Expanded(child: TwoRoundedButton(text: "Read",press: (){},))
+                              Expanded(
+                                child: TwoRoundedButton(
+                                  text: "Read",
+                                  press: () {},
+                                ),
+                              )
                             ],
                           ),
                         ],
@@ -130,37 +141,6 @@ class HomeScreen extends StatelessWidget {
               ),
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class TwoRoundedButton extends StatelessWidget {
-  final String text;
-  final double radious = 29;
-  final VoidCallback press;
-  const TwoRoundedButton({
-    super.key,
-    required this.text,
-    required this.press,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: press,
-      child: Container(
-        alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(vertical: 10),
-        decoration: BoxDecoration(
-          color: kBlackColor,
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(29), bottomRight: Radius.circular(29)),
-        ),
-        child: Text(
-          text,
-          style: TextStyle(color: Colors.white),
         ),
       ),
     );
