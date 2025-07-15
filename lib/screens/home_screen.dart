@@ -1,4 +1,5 @@
 import 'package:ebook_reading_app/constants.dart';
+import 'package:ebook_reading_app/screens/details_screen.dart';
 import 'package:ebook_reading_app/widgets/book_rating.dart';
 import 'package:ebook_reading_app/widgets/reading_card_list.dart';
 import 'package:ebook_reading_app/widgets/two_rounded_button.dart';
@@ -55,7 +56,12 @@ class HomeScreen extends StatelessWidget {
                           title: "Crushing & Influence",
                           auth: "Automex technologies",
                           rating: 4.9,
-                          pressDetails: () {},
+                          pressDetails: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return DetailsScreen();
+                            }));
+                          },
                           pressRead: () {},
                         ),
                         ReadingListCard(
